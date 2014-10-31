@@ -72,95 +72,78 @@
             <section id="s2">
                 <h2>Project 1</h2>
                 <p>
-                    reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-                    support for CSS 3D transforms to see it in its full glory.
+                    Grinder Extraction Cleanup
                 </p>
-                <aside class="notes">
-                    Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-                </aside>
+                
             </section>
             <!-- Example of nested vertical slides -->
             <section>
-                <section>
-                    <h2>Vertical Slides</h2>
-                    <p>
-                        Slides can be nested inside of other slides,
-                        try pressing <a href="#" class="navigate-down">down</a>.
-                    </p>
-
-                </section>
-                <section>
-                    <h2>Basement Level 1</h2>
-                    <p>Press down or up to navigate.</p>
-                </section>
-                <section>
-                    <h2>Basement Level 2</h2>
-                    <p>Cornify</p>
-                    <a class="test" href="http://cornify.com">
-                        <img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-                    </a>
-                </section>
-                <section>
-                    <h2>Basement Level 3</h2>
-                    <p>That's it, time to go back up.</p>
-                    <a href="#/2" class="image">
-                        <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-                    </a>
-                </section>
-            </section>
-            <section>
-                <h2>Slides</h2>
+                <h2>Project 2</h2>
                 <p>
-                    Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
+                    <pre>
+                        A web application to serve as an admin tool.
+                        User management for other applications
+                        Control access permissions
+                    </pre>
                 </p>
             </section>
             <section>
-                <h2>Point of View</h2>
-                <p>
-                    Press <strong>ESC</strong> to enter the slide overview.
-                </p>
-                <p>
-                    Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-                </p>
-            </section>
-            <section>
-                <h2>Works in Mobile Safari</h2>
-                <p>
-                    Try it out! You can swipe through the slides and pinch your way to the overview.
-                </p>
-            </section>
-            <section>
-                <h2>Marvelous Unordered List</h2>
+                <h2>Evolution</h2>
                 <ul>
-                    <li>No order here</li>
-                    <li>Or here</li>
-                    <li>Or here</li>
-                    <li>Or here</li>
+                    <li>Hand code</li>
+                    <li></li>
+                    <li></li>
                 </ul>
             </section>
             <section>
-                <h2>Fantastic Ordered List</h2>
-                <ol>
-                    <li>One is smaller than...</li>
-                    <li>Two is smaller than...</li>
-                    <li>Three!</li>
-                </ol>
+                <h2>Takeaways (see what I did there?)</h2>
+                <ul>
+                    <li>Don't expect perfect design to be handed over to you</li>
+                    <li>You might be building on something that is fragile or not destined to last</li>
+                    <li>You might be scratching your head a lot if you don't fill in the gaps in your knowledge</li>
+                </ul>
             </section>
-            <section data-markdown>
-                <script type="text/template">
-                    ## Markdown support
-
-                    For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-                    ```
-                    <section data-markdown>
-                        ## Markdown support
-
-                        For those of you who like that sort of thing.
-                        Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-                    </section>
-                    ```
-                </script>
+            <section>
+                <h2>What next?</h2>
+                <p>
+                    Bring it all together
+                </p>
+            </section>
+            <section>
+                <code><pre>
+(ns hiccup-templating.views.layout
+  (:use [hiccup.page :only (html5 include-css include-js)]))
+(defn application [title & content]
+  (html5 {:ng-app "myApp" :lang "en"}
+         [:head
+          [:title title]
+          (include-css "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css")
+          (include-js "http://code.angularjs.org/1.2.3/angular.min.js")
+          (include-js "js/ui-bootstrap-tpls-0.7.0.min.js")
+          (include-js "js/script.js")
+          [:body
+           [:div {:class "container"} content ]]]))
+</pre></code>
+            </section>
+            <section>
+                <code><pre>
+(defn hello []
+  [:div {:class "well"}
+   [:h1 {:class "text-info"} "Hello Hiccup and AngularJS"]
+   [:div {:class "row"}
+    [:div {:class "col-lg-2"}
+     (label "name" "Name:")]
+    [:div {:class "col-lg-4"}
+     (text-field {:class "form-control" :ng-model "yourName" :placeholder "Enter a name here"} "your-name")]]
+   [:hr]
+   [:h1 {:class "text-success"} "Hello {{yourName}}!"]])
+</pre></code>
+                <section>
+                    <img src="https://raw.githubusercontent.com/yokolet/hiccup-samples/master/images/hello_page.png" />
+                </section>
+            </section>
+            <section>
+                
             </section>
             <section id="transitions">
                 <h2>Transition Styles</h2>
